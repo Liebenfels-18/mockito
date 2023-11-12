@@ -1,34 +1,34 @@
 package ru.netology.mockito;
 
-public class ListFilmsManager {
+public class ListFilmManager {
 
-    private ListFilmItems[] films = new ListFilmItems[0];
-    private int limit = 10;
+    private ListFilmItem[] films = new ListFilmItem[0];
+    private int limit = 5;
 
-    public ListFilmsManager() {
+    public ListFilmManager() {
     }
 
-    public ListFilmsManager(int limit) {
+    public ListFilmManager(int limit) {
         this.limit = limit;
     }
 
-    public void add(ListFilmItems film) {
+    public void add(ListFilmItem film) {
         int length = films.length + 1;
-        ListFilmItems[] tmp = new ListFilmItems[length];
+        ListFilmItem[] tmp = new ListFilmItem[length];
         System.arraycopy(films, 0, tmp, 0, films.length);
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = film;
         films = tmp;
     }
 
-    public ListFilmItems[] findLastTen() {
+    public ListFilmItem[] findLastTen() {
         int resultLength = films.length;
         if (resultLength >= limit) {
             resultLength = limit;
         } else {
             resultLength = films.length;
         }
-        ListFilmItems[] result = new ListFilmItems[resultLength];
+        ListFilmItem[] result = new ListFilmItem[resultLength];
         for (int i = 0; i < result.length; i++) {
             int index = films.length - i - 1;
             result[i] = films[index];
@@ -36,17 +36,14 @@ public class ListFilmsManager {
         return result;
     }
 
-    public ListFilmItems[] findAll() {
+    public ListFilmItem[] findAll() {
         int resultLength = films.length;
-        if (resultLength >= limit) {
-            resultLength = limit;
-        } else {
-            resultLength = films.length;
-        }
-        ListFilmItems[] result = new ListFilmItems[resultLength];
+
+        ListFilmItem[] result = new ListFilmItem[resultLength];
         for (int i = 0; i < result.length; i++) {
             result[i] = films[i];
         }
         return result;
     }
+
 }

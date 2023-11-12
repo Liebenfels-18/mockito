@@ -1,10 +1,10 @@
 package ru.netology.mockito;
 
-public class ListFilmItems {
+public class ListFilmItem {
     private int id;
     private String titleFilm;
 
-    public ListFilmItems(int id, String titleFilm) {
+    public ListFilmItem(int id, String titleFilm) {
         this.id = id;
         this.titleFilm = titleFilm;
     }
